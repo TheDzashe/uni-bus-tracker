@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot = "bottom">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tabs</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+    <ion-tab-button tab = "home">
+      <ion-icon name = "home"></ion-icon>
+      Home
+    </ion-tab-button>
+
+    <ion-tab-button tab = "map">
+      <ion-icon name = "map"></ion-icon>
+      Map
+    </ion-tab-button>
+
+    <ion-tab-button tab = "alerts">
+      <ion-icon name = "notifications"></ion-icon>
+      Alerts
+    </ion-tab-button>
+
+    <ion-tab-button tab = "profile">
+      <ion-icon name = "person-circle-outline"></ion-icon>
+      Profile
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
