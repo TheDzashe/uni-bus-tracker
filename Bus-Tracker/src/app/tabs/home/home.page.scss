@@ -1,4 +1,3 @@
-/* home.page.scss */
 #map-container {
   position: absolute;
   top: 0;
@@ -6,53 +5,125 @@
   right: 0;
   bottom: 0;
   z-index: 0;
+  background: #eee; // debug only
 }
 
+/* Slide-up Panel */
 .slide-up-panel {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
-  background: #fff;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 0 16px 16px;
-  z-index: 10;
-  box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgb(248, 246, 246);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(calc(100% - 120px));
   transition: transform 0.3s ease;
-  max-height: 70vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 
   &.panel-expanded {
     transform: translateY(0);
   }
 
-  &:not(.panel-expanded) {
-    transform: translateY(calc(100% - 120px));
-  }
-
   .panel-header {
-    padding: 16px 0;
+    padding: 16px;
     text-align: center;
-    position: relative;
-    
+
     .handle {
       width: 40px;
       height: 4px;
-      background: #ddd;
+      background: #ccc;
       border-radius: 2px;
       margin: 0 auto 8px;
     }
-  }
-  
-  ion-searchbar {
-    padding: 0;
-  }
-  
-  ion-list {
-    background: transparent;
+
+    h2 {
+      margin: 0;
+      color: #000;
+    }
   }
 }
 
-h2{
-    color: black
+/* Scrollable Content Inside Panel */
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.panel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.panel-content {
+  ion-searchbar {
+    padding: 0 16px;
+    --background: rgb(214, 214, 214);
+    --border-radius: 20px;
+    --placeholder-color: black;
+    --icon-color: black
+  }
+}
+
+/* Recent Destinations */
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.destination-buttons {
+  display: inline-flex;
+  gap: 10px;
+  color: #000;
+}
+
+/* Bus Stops */
+.bus-stops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: transparent;
+    border-bottom: 1px solid #eee;
+
+    ion-label {
+      h3 {
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+
+      .time-indicators {
+        display: flex;
+        gap: 8px;
+
+        ion-chip {
+          height: 28px;
+          font-size: 12px;
+
+          ion-icon {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+ion-label,
+h3,
+h2,
+ion-chip ion-label {
+  color: #000 !important;
 }
