@@ -1,0 +1,58 @@
+/* home.page.scss */
+#map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.slide-up-panel {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 16px 16px;
+  z-index: 10;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  &.panel-expanded {
+    transform: translateY(0);
+  }
+
+  &:not(.panel-expanded) {
+    transform: translateY(calc(100% - 120px));
+  }
+
+  .panel-header {
+    padding: 16px 0;
+    text-align: center;
+    position: relative;
+    
+    .handle {
+      width: 40px;
+      height: 4px;
+      background: #ddd;
+      border-radius: 2px;
+      margin: 0 auto 8px;
+    }
+  }
+  
+  ion-searchbar {
+    padding: 0;
+  }
+  
+  ion-list {
+    background: transparent;
+  }
+}
+
+h2{
+    color: black
+}
