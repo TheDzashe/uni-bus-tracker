@@ -11,6 +11,15 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  {
+    path: '',
+    redirectTo: 'alerts',
+    pathMatch: 'full'
+  },
+  {
+    path: 'alerts',
+    loadChildren: () => import('./tabs/alerts/alerts.module').then(m=> m.AlertsPageModule)
+  }
 ];
 
 @NgModule({

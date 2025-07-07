@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alerts',
@@ -50,8 +51,8 @@ export class AlertsPage {
       color: 'success'
     },
     {
-      action: 'Payment Processed',
-      details: 'Monthly bus pass purchased',
+      action: 'Student Card Scan',
+      details: 'Student card scanned successfully',
       time: '2 hours ago',
       icon: 'card',
       color: 'primary'
@@ -65,7 +66,7 @@ export class AlertsPage {
     },
     {
       action: 'Journey Started',
-      details: 'From Huffield Plaza to Burnett Street',
+      details: 'From Hatfield Plaza to Burnett Street',
       time: '2 days ago',
       icon: 'play',
       color: 'medium'
@@ -74,14 +75,25 @@ export class AlertsPage {
 
   //this injects Ionic's NavController into the component
   //the NavController provides methods for navigating between pages
-  constructor(private navCtrl: NavController) {}
+  //constructor(private navCtrl: NavController) {}
 
   //this makes a forward navigation animation
-  openNotifications() {
-    this.navCtrl.navigateForward('/alerts/notifications');
-  }
+  // openNotifications() {
+  //   console.log('Navigation triggered!');
+  //   this.navCtrl.navigateForward('/alerts/notifications');
+  // }
 
-  openActivity() {
-    this.navCtrl.navigateForward('/alerts/activity');
-  }
+  // openActivity() {
+  //   this.navCtrl.navigateForward('/alerts/activity');
+  // }
+
+  constructor(private router: Router) {}
+
+openNotifications() {
+  this.router.navigate(['/alerts/notifications']);
+}
+
+openActivity() {
+  this.router.navigate(['/alerts/activity']);
+}
 }
