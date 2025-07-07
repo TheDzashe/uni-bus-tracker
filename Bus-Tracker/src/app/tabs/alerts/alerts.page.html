@@ -1,15 +1,37 @@
 <ion-content [fullscreen]="true">
-  <div class = "notifications-container">
-    <ion-title>Notifications</ion-title>
-    <ion-list lines = "inset">
-
+ 
+  <div class="notifications-container">
+    <ion-item button detail="true" (click)="openNotifications()">
+      <ion-label class="section-title">Notifications</ion-label>
+    </ion-item>
+    
+    <ion-list lines="none">
+      <ion-item *ngFor="let alert of alerts.slice(0, 3)"> <!-- so this will cycle through all array alerts, and the slice(0,3) makes sure that only the first 3 are shown-->
+        <ion-icon slot="start" [name]="alert.icon" [color]="alert.color"></ion-icon>
+        <ion-label>
+          <h3>{{ alert.title }}</h3>
+          <p>{{ alert.message }}</p>
+          <p class="time">{{ alert.time }}</p>
+        </ion-label>
+      </ion-item>
     </ion-list>
   </div>
 
-  <div class = "activity-container">
-    <ion-title>Alerts</ion-title>
-    <ion-list lines = "inset">
-
+  <!-- Activity Section -->
+  <div class="activity-container">
+    <ion-item button detail="true" (click)="openActivity()">
+      <ion-label class="section-title">Activity</ion-label>
+    </ion-item>
+    
+    <ion-list lines="none">
+      <ion-item *ngFor="let item of activity.slice(0, 3)">
+        <ion-icon slot="start" [name]="item.icon" [color]="item.color"></ion-icon>
+        <ion-label>
+          <h3>{{ item.action }}</h3>
+          <p>{{ item.details }}</p>
+          <p class="time">{{ item.time }}</p>
+        </ion-label>
+      </ion-item>
     </ion-list>
   </div>
 </ion-content>
