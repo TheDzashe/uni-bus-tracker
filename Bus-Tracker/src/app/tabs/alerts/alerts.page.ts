@@ -75,25 +75,27 @@ export class AlertsPage {
 
   //this injects Ionic's NavController into the component
   //the NavController provides methods for navigating between pages
-  //constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController) {}
 
-  //this makes a forward navigation animation
-  // openNotifications() {
-  //   console.log('Navigation triggered!');
-  //   this.navCtrl.navigateForward('/alerts/notifications');
-  // }
+  // this makes a forward navigation animation
+  openNotifications() {
+    console.log('Navigation triggered!');
+    this.navCtrl.navigateForward('/alerts/notifications');
+  }
 
-  // openActivity() {
-  //   this.navCtrl.navigateForward('/alerts/activity');
-  // }
+  openActivity() {
+    this.navCtrl.navigateForward('/alerts/activity');
+  }
+  //! also find a way to do backward navigation for the above stuff
 
-  constructor(private router: Router) {}
 
-openNotifications() {
-  this.router.navigate(['/alerts/notifications']);
-}
+//!alternative method incase the method above stops working
+//   constructor(private router: Router) {}
+// openNotifications() {
+//   this.router.navigate(['/alerts/notifications']);
+// }
 
-openActivity() {
-  this.router.navigate(['/alerts/activity']);
-}
+// openActivity() {
+//   this.router.navigate(['/alerts/activity']);
+// }
 }

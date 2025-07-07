@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
+//? whenever you create new children make sure that their parents are added to this path otherwise you keep getting errors
+
 const routes: Routes = [
   {
     path: '',
@@ -18,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'alerts',
-    loadChildren: () => import('./tabs/alerts/alerts.module').then(m=> m.AlertsPageModule)
+    loadChildren: () => import('./tabs/alerts/alerts.module').then(m=> m.AlertsPageModule) //this was missing and was causing errors
   }
 ];
 
