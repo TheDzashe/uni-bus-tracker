@@ -5,7 +5,7 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
-  selector: 'app-home',
+  selector:  'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone:false,
@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
 
   selectDestination(destination: string) {
     console.log('Selected destination:', destination);
-    // Navigation logic goes here
+    //! navigation logic goes here
   }
 
   private async initMap() {
@@ -60,6 +60,6 @@ export class HomePage implements OnInit {
   }
 
   private loadNearbyStops() {
-    // You could load real data here
+    //! you could load real data here
   }
 }

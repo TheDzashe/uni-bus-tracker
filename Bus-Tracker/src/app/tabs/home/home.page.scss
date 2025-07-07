@@ -5,10 +5,9 @@
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: #eee; // debug only
+  background: #eee; 
 }
 
-/* Slide-up Panel */
 .slide-up-panel {
   position: fixed;
   bottom: 0;
@@ -47,7 +46,6 @@
   }
 }
 
-/* Scrollable Content Inside Panel */
 .panel-content {
   flex: 1;
   overflow-y: auto;
@@ -69,7 +67,7 @@
   }
 }
 
-/* Recent Destinations */
+
 .scroll-container {
   overflow-x: auto;
   white-space: nowrap;
@@ -86,7 +84,6 @@
   color: #000;
 }
 
-/* Bus Stops */
 .bus-stops-list {
   display: flex;
   flex-direction: column;

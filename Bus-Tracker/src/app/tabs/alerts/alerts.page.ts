@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertsPage implements OnInit {
 
+  alerts = [
+
+  ]
+
+  activity = [
+    
+  ]
   constructor() { }
 
   ngOnInit() {

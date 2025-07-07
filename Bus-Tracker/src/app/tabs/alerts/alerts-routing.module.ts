@@ -7,7 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: AlertsPage
+  },  {
+    path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'activity',
+    loadChildren: () => import('./activity/activity.module').then( m => m.ActivityPageModule)
   }
+
 ];
 
 @NgModule({
