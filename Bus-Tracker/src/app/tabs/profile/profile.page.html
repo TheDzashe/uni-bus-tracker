@@ -1,12 +1,53 @@
 <ion-content [fullscreen]="true">
   <div class = "profile-picture">
-
+    <ion-item lines="none">
+      <ion-avatar id = "profile-pic-avatar">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar> <!-- for now it will be hard coded but soon it will contain something hard coded-->
+    </ion-item>
   </div>
 
-  <div class = "personal-info">
+  <div class="personal-info">
+  <ion-label class="section-title">Personal Information</ion-label>
 
+  <div class="info-card"> <!-- Wrapper div for styling -->
+      <ion-list lines="none">
+        <ion-label>
+          <h3>Personal Details</h3>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Full Name:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].firstName }} {{ profiles[0].lastName }}</ion-col>
+          </ion-row>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Email:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].email }}</ion-col>
+          </ion-row>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Phone:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].phone }}</ion-col>
+          </ion-row>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Gender:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].gender }}</ion-col>
+          </ion-row>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Date of Birth:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].dateOfBirth }}</ion-col>
+          </ion-row>
+
+          <ion-row class="info-row">
+            <ion-col size="6"><strong>Age:</strong></ion-col>
+            <ion-col size="6" class="value-right">{{ profiles[0].age }}</ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-list>
   </div>
-
+</div>
 
   <div class = "settings-container"> <!-- this will have the settings and privacy-->
     <ion-item button detail = "true" (click)="openSettings()">

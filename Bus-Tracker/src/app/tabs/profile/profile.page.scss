@@ -1,0 +1,68 @@
+//! I will use this if I want the backgrounds of the divs to be transparent
+// ion-item {
+//   --background: transparent;
+//   background: transparent;
+// }
+
+//? for now only the background of the profile picture will appear transparent
+.profile-picture ion-item {
+  --background: transparent;
+  background: transparent;
+}
+
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+#profile-pic-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.value-right {
+  text-align: right;
+}
+
+.info-row {
+  margin-bottom: 8px;
+}
+
+
+.personal-info {
+  width: 100%;
+  padding: 16px;
+}
+
+.section-title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.info-card {
+  background: rgb(131, 80, 80); // Background color
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  ion-list {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

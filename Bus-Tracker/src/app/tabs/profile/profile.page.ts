@@ -10,6 +10,19 @@ import {NavController} from '@ionic/angular'
 export class ProfilePage{
 // export class ProfilePage implements OnInit {
 
+
+  profiles =[
+    {
+      username: 'alexM',
+      firstName: 'Alexia',
+      lastName: 'Mallo',
+      email: 'alexia@gmail.com',
+      phone: '+27 00 000 0000',
+      gender: 'Female',
+      dateOfBirth: '12-03-2000',
+      age: '25',
+    }
+  ]
   constructor(private navCtrl: NavController) {}
 
   openSettings(){

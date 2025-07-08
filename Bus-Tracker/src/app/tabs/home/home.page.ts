@@ -15,11 +15,34 @@ export class HomePage implements OnInit {
   panelExpanded = false;
 
   nearbyStops = [
-    { name: 'Hatfield Plaza', distance: '2 min walk', arrivalTime: '3 mins' },
-    { name: 'Burnett Street', distance: '5 min walk', arrivalTime: '7 mins' },
-    { name: 'Brooklyn Circle', distance: '6 min walk', arrivalTime: '5 mins' },
-    { name: 'Lynnwood Road', distance: '8 min walk', arrivalTime: '12 mins' },
-    { name: 'University Gate 2', distance: '3 min walk', arrivalTime: '4 mins' },
+    { 
+      name: 'Hatfield Plaza', 
+      distance: '2 min walk', 
+      arrivalTime: '3 mins' 
+    },
+
+    { 
+      name: 'Burnett Street', 
+      distance: '5 min walk', 
+      arrivalTime: '7 mins' },
+
+    { 
+      name: 'Brooklyn Circle', 
+      distance: '6 min walk', 
+      arrivalTime: '5 mins' 
+    },
+
+    { 
+      name: 'Lynnwood Road', 
+      distance: '8 min walk', 
+      arrivalTime: '12 mins' 
+    },
+    
+    { 
+      name: 'University Gate 2', 
+      distance: '3 min walk', 
+      arrivalTime: '4 mins' 
+    },
   ];
 
   async ngOnInit() {
