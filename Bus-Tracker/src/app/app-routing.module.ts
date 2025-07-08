@@ -22,7 +22,16 @@ const routes: Routes = [
   {
     path: 'alerts',
     loadChildren: () => import('./tabs/alerts/alerts.module').then(m=> m.AlertsPageModule) //this was missing and was causing errors
-  }
+  },
+  {
+    path: '',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./tabs/profile/profile.module').then(m=> m.ProfilePageModule) //! added this so that the settings page can have settings
+  },
 ];
 
 @NgModule({

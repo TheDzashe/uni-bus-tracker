@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class = "profile-picture">
+
+  </div>
+
+  <div class = "personal-info">
+
+  </div>
+
+
+  <div class = "settings-container"> <!-- this will have the settings and privacy-->
+    <ion-item button detail = "true" (click)="openSettings()">
+      <ion-label class = "settings-title">Settings and Privacy</ion-label>
+    </ion-item>
+  </div>
 </ion-content>

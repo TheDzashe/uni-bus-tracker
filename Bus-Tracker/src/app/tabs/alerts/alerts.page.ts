@@ -79,7 +79,7 @@ export class AlertsPage {
 
   // this makes a forward navigation animation
   openNotifications() {
-    console.log('Navigation triggered!');
+    console.log('Navigation triggered!'); //this is going to help with debugging
     this.navCtrl.navigateForward('/alerts/notifications');
   }
 
