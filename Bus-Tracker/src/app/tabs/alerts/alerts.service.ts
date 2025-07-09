@@ -4,10 +4,17 @@ import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
-  //I want the service to be provided in root so that there can be a shared instance for the entire app
 })
+//I want the service to be provided in root so that there can be a shared instance for the entire app
 
+
+//this means that the AlertsService class can be imported and used in other files
 export class AlertsService {
+    
+    //declaring some arrays below
+    //making them public to be easily accessed outside
+
+      //! for now these are manually put alerts and notifications, I will find a way to dynamically populate them soon
     public notifications = [
         {
         title: 'Bus Delay',

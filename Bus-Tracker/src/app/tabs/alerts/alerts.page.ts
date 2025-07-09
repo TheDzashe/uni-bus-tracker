@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AlertsService } from './alerts.service';
 
+//the interfaces will define the data types of my data structures, plus it was complaining without it
 interface Notifications {
   title: string;
   message: string;
@@ -28,9 +29,9 @@ interface Activity {
 })
 
 export class AlertsPage {
-  //! for now these are manually put alerts and notifications, I will find a way to dynamically populate them soon
-  //the arrays info has been declared in the services file
 
+  //the arrays info has been declared in the services file
+  //the lines will initialise empty arrays with the structures from the interface
   notifications: Notifications[] = [];
   activity: Activity[] = [];
   
@@ -38,6 +39,14 @@ export class AlertsPage {
   //this injects Ionic's NavController into the component
   //the NavController provides methods for navigating between pages
   constructor(private navCtrl: NavController, private alertsService: AlertsService) {
+
+          /* NOTE:  constructor(navCtrl: NavController) {
+                      this.navCtrl = navCtrl;
+                    } 
+          is equivalent to the line private navCtrl: NavController*/
+
+
+    //copies the references from the alerts services arrays into these local arrays
     this.notifications = this.alertsService.notifications;
     this.activity = this.alertsService.activity;
   }
