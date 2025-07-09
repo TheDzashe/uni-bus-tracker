@@ -1,3 +1,15 @@
-.back-button{
-    float: right;
+.notifications {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.notifications-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.back-button {
+    align-self: flex-end; // aligns to the right
+    margin-top: 16px;
 }

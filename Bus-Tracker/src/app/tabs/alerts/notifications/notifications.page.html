@@ -4,16 +4,19 @@
       <ion-label class="notifications-title">Notifications</ion-label>
     </ion-item>
 
-    <ion-list lines="inset">
-      <ion-item *ngFor="let notification of notifications"> <!-- so this will cycle through all array alerts, and the slice(0,3) makes sure that only the first 3 are shown-->
-        <ion-icon slot="start" [name]="notification.icon" [color]="notification.color"></ion-icon>
-        <ion-label>
-          <h3>{{ notification.title }}</h3>
-          <p>{{ notification.message }}</p>
-          <p class="time">{{ notification.time }}</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+    <div class = notifications-list>
+      <ion-list lines="inset">
+        <ion-item *ngFor="let notification of notifications"> <!-- so this will cycle through all array alerts, and the slice(0,3) makes sure that only the first 3 are shown-->
+          <ion-icon slot="start" [name]="notification.icon" [color]="notification.color"></ion-icon>
+          <ion-label>
+            <h3>{{ notification.title }}</h3>
+            <p>{{ notification.message }}</p>
+            <p class="time">{{ notification.time }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    
 
     <ion-button class = "back-button" shape = "round" color = "medium" (click)="backAlerts()">
       <ion-label>Back</ion-label>

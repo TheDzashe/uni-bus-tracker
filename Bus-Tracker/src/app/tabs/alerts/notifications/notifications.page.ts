@@ -26,7 +26,7 @@ export class NotificationsPage implements OnInit {
   }
 
   backAlerts() {
-    console.log('Back to alerts triggered!'); 
+    console.log('Back to alerts triggered! (from notifications'); 
     this.navCtrl.back(); //this is a function of navCtrl
   }
 }

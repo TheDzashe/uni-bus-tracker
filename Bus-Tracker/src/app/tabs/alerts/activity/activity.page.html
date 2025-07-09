@@ -1,7 +1,24 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">activity</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class = "activity">
+    <ion-item>
+      <ion-label class="activity-title">Activity</ion-label>
+    </ion-item>
+
+    <div class = "activity-list">
+      <ion-list lines="inset">
+        <ion-item *ngFor="let activity of activities"> <!-- so this will cycle through all array alerts, and the slice(0,3) makes sure that only the first 3 are shown-->
+          <ion-icon slot="start" [name]="activity.icon" [color]="activity.color"></ion-icon>
+          <ion-label>
+            <h3>{{ activity.action }}</h3>
+            <p>{{ activity.details}}</p>
+            <p class="time">{{ activity.time }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-button class = "back-button" shape = "round" color = "medium" (click)="backAlerts()">
+      <ion-label>Back</ion-label>
+    </ion-button>
+  </div>
 </ion-content>
