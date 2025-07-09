@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertsService } from '../alerts.service';
+
+interface Notifications {
+  title: string;
+  message: string;
+  time: string;
+  icon: string;
+  color: string;
+}
 
 @Component({
   selector: 'app-notifications',
@@ -7,10 +16,11 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class NotificationsPage implements OnInit {
+  notifications: Notifications[] = [];
 
-  constructor() { }
+  constructor(private alertsService: AlertsService) {}
 
   ngOnInit() {
+    this.notifications = this.alertsService.notifications;
   }
-
 }
