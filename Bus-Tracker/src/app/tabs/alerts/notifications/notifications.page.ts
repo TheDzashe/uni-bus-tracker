@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertsService } from '../alerts.service';
+import { NavController } from '@ionic/angular';
 
 interface Notifications {
   title: string;
@@ -18,9 +19,14 @@ interface Notifications {
 export class NotificationsPage implements OnInit {
   notifications: Notifications[] = [];
 
-  constructor(private alertsService: AlertsService) {}
+  constructor(private alertsService: AlertsService, private navCtrl: NavController) {}
 
   ngOnInit() {
     this.notifications = this.alertsService.notifications;
+  }
+
+  backAlerts() {
+    console.log('Back to alerts triggered!'); 
+    this.navCtrl.back(); //this is a function of navCtrl
   }
 }

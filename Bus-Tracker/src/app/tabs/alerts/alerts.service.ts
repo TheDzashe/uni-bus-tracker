@@ -1,8 +1,10 @@
+//the injectable would make the class a service and that can be injected into components
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root',
-  
+  //I want the service to be provided in root so that there can be a shared instance for the entire app
 })
 
 export class AlertsService {
@@ -29,11 +31,11 @@ export class AlertsService {
         color: 'medium'
         },
         {
-        title: 'Payment Received',
-        message: 'Your monthly pass has been renewed',
-        time: '2 days ago',
-        icon: 'checkmark-circle',
-        color: 'success'
+            title: 'Service Alert',
+            message: 'Route 12 will be temporarily closed for maintenance tomorrow.',
+            time: '5 hours ago',
+            icon: 'information-circle',
+            color: 'danger'
         }
     ];
 
