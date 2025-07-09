@@ -7,6 +7,8 @@
     </ion-item>
   </div>
 
+  <div id = "username-container"> {{profiles[0].username}} </div>
+
   <div class="personal-info">
   <ion-label class="section-title">Personal Information</ion-label>
 
@@ -48,9 +50,28 @@
   </div>
 </div>
 
+  <!-- I am going to have to implement this and make sure that it actually works-->
+  <div class="lighting-mode">
+    <ion-item>
+      <ion-icon 
+        [name]="darkMode ? 'moon' : 'sunny-outline'" 
+        [color]="darkMode ? 'dark' : 'warning'">
+      </ion-icon>
+      <ion-toggle [(ngModel)]="darkMode">Dark Mode</ion-toggle>
+    </ion-item>
+  </div>
+
   <div class = "settings-container"> <!-- this will have the settings and privacy-->
     <ion-item button detail = "true" (click)="openSettings()">
+      <ion-icon name="settings-outline"></ion-icon>
       <ion-label class = "settings-title">Settings and Privacy</ion-label>
+    </ion-item>
+  </div>
+
+  <div class = "log-out-container">
+    <ion-item button detail = "true" (click)="openSettings()"> <!--this should come up with a prompt, maybe have an action-sheet as prompt and then lead to a login page-->
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label class = "settings-title">Log Out</ion-label>
     </ion-item>
   </div>
 </ion-content>

@@ -30,6 +30,12 @@ export class ProfilePage{
     this.navCtrl.navigateForward('/profile/settings');
   }
 
+  darkMode = false;
+
+  onDarkModeChange(){
+    console.log('Dark Mode:', this.darkMode);
+  }
+
   // ngOnInit() {
   // }
 
