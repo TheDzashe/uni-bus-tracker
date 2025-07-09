@@ -7,7 +7,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs',  // Points to tabs as entry
+    redirectTo: 'tabs',  //! points to tabs as entry but we want to soon make this login/ signup
     pathMatch: 'full'
   },
   {
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./tabs/profile/profile.module').then(m=> m.ProfilePageModule) //! added this so that the settings page can have settings
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
 ];
 
