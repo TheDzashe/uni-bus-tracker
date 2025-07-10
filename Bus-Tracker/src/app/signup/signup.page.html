@@ -18,17 +18,39 @@
   </div>
 
 
-  <div class = "password-container">
+  <div class="password-container">
     <ion-label>Password</ion-label>
-    <ion-item lines = "none">
-      <ion-input type = "password" placeholder="enter password here" [(ngModel)]="passwordValue">
+    <ion-item lines="none">
+      <ion-input
+        type="password"
+        placeholder="Enter password"
+        [(ngModel)]="passwordValue"
+      >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
     </ion-item>
   </div>
 
-<!-- !the login button should lead to the tabs, but the password has to be checked and stuff-->
-  <ion-button button detail = "true" (click)="openCompleteProfile()" class="login-button" shape ="round" >Sign up</ion-button>
+  <div class="confirm-password-container">
+    <ion-label>Confirm Password</ion-label>
+    <ion-item lines="none">
+      <ion-input
+        type="password"
+        placeholder="Re-enter password"
+        [(ngModel)]="confirmPassword"
+      >
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <ion-text color="danger" *ngIf="passwordValue && confirmPassword && passwordValue !== confirmPassword">
+    Passwords do not match
+  </ion-text>
+
+
+  <!-- !the login button should lead to the tabs, but the password has to be checked and stuff, will implement later-->
+  <ion-button button detail = "true" (click)="openCompleteProfile()" class="login-button" shape ="round" [disabled]="passwordValue !== confirmPassword || !passwordValue" >Sign up</ion-button>
 
   <ion-text>
     <a routerLink="../login">Already have an account?</a>

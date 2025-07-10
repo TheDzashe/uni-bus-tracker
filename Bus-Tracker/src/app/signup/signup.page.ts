@@ -9,6 +9,8 @@ import { NavController } from '@ionic/angular';
 })
 export class SignupPage implements OnInit {
   passwordValue:string ='';
+  confirmPassword: string = '';
+
   constructor(private navCtrl: NavController) { }
 
   openCompleteProfile(){
