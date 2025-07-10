@@ -13,19 +13,20 @@
 
     <ion-label>Last Name</ion-label>
     <ion-item lines = "none">
-      <ion-input placeholder="insert last Name"></ion-input>
+      <ion-input placeholder="insert last name"></ion-input>
     </ion-item>
-  </div>
 
+    <ion-label>Email</ion-label>
+      <ion-item lines = "none">
+        <ion-input placeholder="insert email"></ion-input>
+      </ion-item>
+  </div>
 
   <div class="password-container">
     <ion-label>Password</ion-label>
     <ion-item lines="none">
       <ion-input
-        type="password"
-        placeholder="Enter password"
-        [(ngModel)]="passwordValue"
-      >
+        type="password" placeholder="Enter password" [(ngModel)]="passwordValue">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
     </ion-item>
