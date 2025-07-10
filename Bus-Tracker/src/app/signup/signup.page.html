@@ -1,13 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Sign up</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">signup</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class = "names-container">
+    <ion-label>First Name</ion-label>
+    <ion-item lines = "none">
+      <ion-input placeholder="insert first name"></ion-input>
+    </ion-item>
+
+    <ion-label>Last Name</ion-label>
+    <ion-item lines = "none">
+      <ion-input placeholder="insert last Name"></ion-input>
+    </ion-item>
+  </div>
+
+
+  <div class = "password-container">
+    <ion-label>Password</ion-label>
+    <ion-item lines = "none">
+      <ion-input type = "password" placeholder="enter password here" [(ngModel)]="passwordValue">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+  </div>
+
+<!-- !the login button should lead to the tabs, but the password has to be checked and stuff-->
+  <ion-button button detail = "true" (click)="openCompleteProfile()" class="login-button" shape ="round" >Sign up</ion-button>
+
+  <ion-text>
+    <a routerLink="../login">Already have an account?</a>
+  </ion-text>
 </ion-content>

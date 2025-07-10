@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class SignupPage implements OnInit {
+  passwordValue:string ='';
+  constructor(private navCtrl: NavController) { }
 
-  constructor() { }
-
+  openCompleteProfile(){
+    this.navCtrl.navigateForward('/signup/complete-profile');
+  }
   ngOnInit() {
   }
 

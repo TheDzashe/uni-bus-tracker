@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SignupPage
+  },  {
+    path: 'complete-profile',
+    loadChildren: () => import('./complete-profile/complete-profile.module').then( m => m.CompleteProfilePageModule)
   }
+
 ];
 
 @NgModule({
