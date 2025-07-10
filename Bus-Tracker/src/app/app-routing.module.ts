@@ -7,7 +7,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs',  //! points to tabs as entry but we want to soon make this login/ signup
+    redirectTo: 'login',  //points to the entry page
     pathMatch: 'full'
   },
   {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NavController} from '@ionic/angular'
 
 @Component({
   selector: 'app-login',
@@ -11,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class LoginPage implements OnInit {
   passwordValue: string = '';
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
+  openTabs(){
+      console.log('Tabs triggered');
+      this.navCtrl.navigateForward('/tabs');
+    }
 }

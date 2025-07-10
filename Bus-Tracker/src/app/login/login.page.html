@@ -21,7 +21,8 @@
     </ion-item>
   </div>
 
-  <ion-button class="login-button" shape ="round">Log in</ion-button>
+  <!-- !the login button should lead to the tabs, but the password has to be checked and stuff-->
+  <ion-button button detail = "true" (click)="openTabs()" class="login-button" shape ="round" >Log in</ion-button>
 
   <ion-text>
     <a routerLink="../signup">Don't have an account?</a>
